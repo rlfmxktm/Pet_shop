@@ -11,9 +11,9 @@ public class JdbcUtil {
 	Connection con = null;
 	
 	try {
-		Context initCtx = new InitalContext();
+		Context initCtx = new InitialContext();
 		Context envCtx = (Context)initCtx.lookup("java:comp/env");
-		DataSource ds = (DataSource)envCtx.lookup("jdbc/dogTest"); 
+		DataSource ds = (DataSource)envCtx.lookup("jdbc/petshop"); 
 		con = ds.getConnection();
 		con.setAutoCommit(false);
 	} catch (Exception e) {
@@ -47,7 +47,7 @@ public class JdbcUtil {
 		try {
 			rs.close();
 		} catch (Exception e) {
-			e.printStackTrace
+			e.printStackTrace();
 		}
 	}
 	

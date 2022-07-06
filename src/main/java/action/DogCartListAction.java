@@ -13,7 +13,7 @@ public class DogCartListAction implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		DogCartListService dogCartListService = new DogCartListService();
 		ArrayList<Cart> cartList = dogCartListService.getCartList(request);
-		// ÃÑ±Ý¾× °è»ê
+		// ï¿½Ñ±Ý¾ï¿½ ï¿½ï¿½ï¿½
 		int totalMoney = 0;
 		int money = 0;
 		

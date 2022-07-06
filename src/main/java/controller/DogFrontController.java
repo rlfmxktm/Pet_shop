@@ -35,22 +35,22 @@ public class DogFrontController extends HttpServlet {
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 				request.setCharacterEncoding("UTF-8");
-				// 1. ¿äÃ»ÆÄ¾Ç
+				// 1. ï¿½ï¿½Ã»ï¿½Ä¾ï¿½
 				String requestURI = request.getRequestURI();
-				// ¿äÃ» URL : http://localhost:8088/boardProject/boardWriteFrom.bo
-				// requestURI:/boardProject/boardWriteForm.bo ¹ÝÈ¯
+				// ï¿½ï¿½Ã» URL : http://localhost:8088/boardProject/boardWriteFrom.bo
+				// requestURI:/boardProject/boardWriteForm.bo ï¿½ï¿½È¯
 				
 				String contextPath = request.getContextPath();
-				//	/boardProject ¹ÝÈ¯
+				//	/boardProject ï¿½ï¿½È¯
 				
 				String command = requestURI.substring(contextPath.length());
 				Action action = null;
 				ActionForward forward = null;
 				
-				// 2. °¢ ¿äÃ»º°·Î ºñÁî´Ï½º ·ÎÁ÷ È£Ãâ
+				// 2. ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï½ï¿½ ï¿½ï¿½ï¿½ï¿½ È£ï¿½ï¿½
 				if(command.equals("/dogList.dog")) {
 					action = new DogListAction();
-					// ÇÁ·ÎÁ§Æ®¸í + ±â´É + ÇüÅÂ(?)
+					// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ + ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½ï¿½(?)
 					try {
 						forward = action.execute(request, response);
 					} catch (Exception e) {
@@ -59,7 +59,7 @@ public class DogFrontController extends HttpServlet {
 				}
 				else if(command.equals("/dogView.dog")) {
 					action = new DogViewAction();
-					// ÇÁ·ÎÁ§Æ®¸í + ±â´É + ÇüÅÂ(?)
+					// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ + ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½ï¿½(?)
 					try {
 						forward = action.execute(request, response);
 					} catch (Exception e) {
@@ -68,7 +68,7 @@ public class DogFrontController extends HttpServlet {
 				}
 				else if(command.equals("/dogCartAdd.dog")) {
 						action = new DogCartAddAction();
-						// ÇÁ·ÎÁ§Æ®¸í + ±â´É + ÇüÅÂ(?)
+						// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ + ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½ï¿½(?)
 						try {
 							forward = action.execute(request, response);
 						} catch (Exception e) {
@@ -76,8 +76,8 @@ public class DogFrontController extends HttpServlet {
 						}
 				}
 				else if(command.equals("/dogCartList.dog" )) {
-					action = new DogCarListAction();
-					// ÇÁ·ÎÁ§Æ®¸í + ±â´É + ÇüÅÂ(?)
+					action = new DogCartListAction();
+					// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ + ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½ï¿½(?)
 					try {
 						forward = action.execute(request, response);
 					} catch (Exception e) {
@@ -86,7 +86,7 @@ public class DogFrontController extends HttpServlet {
 				}
 				else if(command.equals("/dogCartSerarch.dog")) {
 					action = new DogCartSearchAction();
-					// ÇÁ·ÎÁ§Æ®¸í + ±â´É + ÇüÅÂ(?)
+					// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ + ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½ï¿½(?)
 					try {
 						forward = action.execute(request, response);
 					} catch (Exception e) {
@@ -95,7 +95,7 @@ public class DogFrontController extends HttpServlet {
 				}
 				else if(command.equals("/dogCartRemove.dog")) {
 					action = new DogCartRemoveAction();
-					// ÇÁ·ÎÁ§Æ®¸í + ±â´É + ÇüÅÂ(?)
+					// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ + ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½ï¿½(?)
 					try {
 						forward = action.execute(request, response);
 					} catch (Exception e) {
@@ -104,7 +104,7 @@ public class DogFrontController extends HttpServlet {
 				}
 				else if(command.equals("/dogCartQtyUp.dog")) {
 					action = new DogCartQtyUpAction();
-					// ¸ðµâ + ±â´É + ÆÐÅÏ
+					// ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½ï¿½
 					try {
 						forward = action.execute(request, response);
 					} catch (Exception e) {
@@ -113,7 +113,7 @@ public class DogFrontController extends HttpServlet {
 				}
 				else if(command.equals("/dogCartQtyDown.dog")) {
 					action = new DogCartQtyDownAction();
-					// ÇÁ·ÎÁ§Æ®¸í + ±â´É + ÇüÅÂ(?)
+					// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ + ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½ï¿½(?)
 					try {
 						forward = action.execute(request, response);
 					} catch (Exception e) {
@@ -122,7 +122,7 @@ public class DogFrontController extends HttpServlet {
 				}
 				else if(command.equals("/dogRegist.dog")) {
 					action = new DogRegistAction();
-					// ÇÁ·ÎÁ§Æ®¸í + ±â´É + ÇüÅÂ(?)
+					// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ + ï¿½ï¿½ï¿½ + ï¿½ï¿½ï¿½ï¿½(?)
 					try {
 						forward = action.execute(request, response);
 					} catch (Exception e) {
@@ -137,7 +137,7 @@ public class DogFrontController extends HttpServlet {
 						e.printStackTrace();
 					}
 				}
-				// 3. Æ÷¿öµù
+				// 3. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				if(forward != null) {
 					if(forward.isRedirect()) {
 						response.sendRedirect(forward.getPath());

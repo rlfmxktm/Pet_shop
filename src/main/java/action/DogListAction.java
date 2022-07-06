@@ -1,9 +1,12 @@
 package action;
 
+
 import java.util.ArrayList;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import svc.DogListService;
 import vo.ActionForward;
 import vo.Dog;
@@ -23,7 +26,7 @@ public class DogListAction implements Action {
 			}
 		}
 		
-		DogListService dogListServie = new DogListService();
+		DogListService dogListService = new DogListService();
 		ArrayList<Dog> dogList = dogListService.getDogList();
 		request.setAttribute("dogList", dogList);
 		request.setAttribute("todayImageList", todayImageList);

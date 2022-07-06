@@ -6,7 +6,7 @@ import dao.DogDAO;
 import vo.Dog;
 public class DogRegistService {
 
-	public boolean registDog(Dog dog) {
+	public static boolean registDog(Dog dog) {
 		DogDAO dogDAO = DogDAO.getInstance();
 		Connection con = getConnection();
 		dogDAO.setConnection(con);		

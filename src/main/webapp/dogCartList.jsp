@@ -1,4 +1,3 @@
-<%@page import="com.sun.org.apache.bcel.internal.generic.Select"%>
 <%@page import="vo.Cart"%>
 <%@page import="vo.Dog"%>
 <%@page import="dao.DogDAO"%>

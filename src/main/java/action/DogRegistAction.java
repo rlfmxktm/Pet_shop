@@ -3,25 +3,25 @@ package action;
 import java.io.PrintWriter;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.HttpServletResponse;
+import javax.servlet.http.HttpServletResponse;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import svc.DogRegistService;
 import vo.ActionForward;
 import vo.Dog;
 
-public class DogRegistAction implements Acion {
+public class DogRegistAction implements Action {
 	
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		DogRegistService dogRegistService = new DogRegistService();
 		String realFolder = "";
-		// ÆÄÀÏ ¾÷·ÎµåµÉ ¼­¹ö »óÀÇ ¹°¸®ÀûÀÎ °æ·Î
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Îµï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 		
 		String saveFolder = "/images";
 		String encType = "UTF-8";
 		int maxSize = 5*1024*1024;
-		// ÇÑ¹ø¿¡ ¾÷·ÎµåÇÒ ¼ö ÀÖ´Â ÆÄÀÏÀÇ Å©±â
+		// ï¿½Ñ¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Îµï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å©ï¿½ï¿½
 		
 		ServletContext context = request.getServletContext();
 		realFolder = context.getRealPath(saveFolder);
@@ -46,7 +46,7 @@ public class DogRegistAction implements Acion {
 			response.setContentType("text/html;charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.println("<script>");
-			out.println("alert("µî·Ï½ÇÆĞ");");
+			out.println("alert('ë“±ë¡ì‹¤íŒ¨');");
 			out.println("history.back();");
 			out.println("</script>");
 		}
