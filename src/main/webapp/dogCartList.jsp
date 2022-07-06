@@ -201,7 +201,7 @@ table {
              ${cart.price }
             </td>
              <td>
-             <a href="dogCartQtyUp.dog?kind=${cart.encodingKind }">
+             <a href="dogCartQtyUp.dog?kind=${cart.kind }">
              <img src="images/up.jpg" id = "upImage" border=0/>
              </a><br>
              ${cart.qty }<br>
